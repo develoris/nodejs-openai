@@ -1,0 +1,8 @@
+---
+applications:
+  - name: nodejs-openai
+    random-route: true
+    path: .
+    buildpack: nodejs_buildpack
+    command: node src/index.js
+    memory: 128M
