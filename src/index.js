@@ -10,7 +10,7 @@ server.post('/completion', async (req, res) => {
         const response = await openAiService.getCompletion(req.body.message)
         res.json(response.content)
     } catch (error) {
-        res.status(400).send(error)
+        res.status(error.status ? error.status : 500).send(error)
     }
 })
 server.listen(process.env.PORT || 8080, () => {
